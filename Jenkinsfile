@@ -26,6 +26,11 @@ pipeline {
 				archiveArtifacts artifacts: 'target/*.war', fingerprint: true
 			}
 		}
+		stage('Check WAR') {
+    steps {
+        sh 'ls -l target'
+    }
+}
 		
 		stage('Deploy') {
 			steps {
